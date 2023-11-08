@@ -15,11 +15,20 @@ proxy-providers:
     url: "https://api-suc.0z.gs/sub?target=clash&url=https%3A%2F%2Fw3.mm2023.top%2F%2Flink%2FYVWHqSTChkqS1F1K%3Fsub%3D3&insert=false&emoji=true&list=true&tfo=false&scv=false&fdn=false&sort=false&udp=true&new_name=true"
     path: ./proxies/MMcloud.yaml
 proxy-groups:
-  - name: "🚀 代理节点"
-    type: select
+  - name: "♻️ 自动选择"
+    type: url-test
     use:
       - MMcloud
-  - name: "🎯 直连模式"
+    filter: "香港|台湾|新加坡|马来西亚"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 3600
+  - name: "🚀 代理连接"
+    type: select
+    proxies:
+      - ♻️ 自动选择
+    use:
+      - MMcloud
+  - name: "🎯 直接连接"
     type: select
     proxies:
       - DIRECT
@@ -27,15 +36,18 @@ proxy-groups:
     type: select
     proxies:
       - REJECT
+      - 🎯 直接连接
+      - 🚀 代理连接
   - name: "🎵 音乐解锁"
     type: select
     proxies:
       - 🔓 UnblockNeteaseMusic
+      - 🎯 直接连接
   - name: "🌐 其它连接"
     type: select
     proxies:
-      - 🚀 代理节点
-      - 🎯 直连模式
+      - 🚀 代理连接
+      - 🎯 直接连接
 rule-providers:
   necmip:
     type: http
@@ -154,22 +166,22 @@ rule-providers:
 
 rules:
   - RULE-SET,necmdm,🎵 音乐解锁
-  - RULE-SET,custom-proxy,🚀 代理节点
-  - RULE-SET,custom-direct,🎯 直连模式
-  - RULE-SET,private,🎯 直连模式
+  - RULE-SET,custom-proxy,🚀 代理连接
+  - RULE-SET,custom-direct,🎯 直接连接
+  - RULE-SET,private,🎯 直接连接
   - RULE-SET,reject,⛔ 广告拦截
-  - RULE-SET,apple,🎯 直连模式
-  - RULE-SET,icloud,🎯 直连模式
-  - RULE-SET,google,🎯 直连模式
-  - RULE-SET,direct,🎯 直连模式
-  - RULE-SET,proxy,🚀 代理节点
-  - RULE-SET,gfw,🚀 代理节点
-  - RULE-SET,greatfire,🚀 代理节点
-  - RULE-SET,tld-not-cn,🚀 代理节点
-  - RULE-SET,lancidr,🎯 直连模式
-  - RULE-SET,cncidr,🎯 直连模式
-  - RULE-SET,telegramcidr,🚀 代理节点
+  - RULE-SET,apple,🎯 直接连接
+  - RULE-SET,icloud,🎯 直接连接
+  - RULE-SET,google,🎯 直接连接
+  - RULE-SET,direct,🎯 直接连接
+  - RULE-SET,proxy,🚀 代理连接
+  - RULE-SET,gfw,🚀 代理连接
+  - RULE-SET,greatfire,🚀 代理连接
+  - RULE-SET,tld-not-cn,🚀 代理连接
+  - RULE-SET,lancidr,🎯 直接连接
+  - RULE-SET,cncidr,🎯 直接连接
+  - RULE-SET,telegramcidr,🚀 代理连接
   - RULE-SET,necmip,🎵 音乐解锁
-  - GEOIP,LAN,🎯 直连模式
-  - GEOIP,CN,🎯 直连模式
+  - GEOIP,LAN,🎯 直接连接
+  - GEOIP,CN,🎯 直接连接
   - MATCH,🌐 其它连接
