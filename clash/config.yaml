@@ -64,13 +64,13 @@ rule-providers:
   custom-proxy:
     type: http
     behavior: domain
-    url: "https://gcore.jsdelivr.net/gh/chrocleo/proxy-config@main/clash/ruleset/custom-proxy.yaml"
+    url: "https://gcore.jsdelivr.net/gh/chrocleo/proxy-config@latest/clash/ruleset/custom-proxy.yaml"
     path: ./ruleset/custom-proxy.yaml
 
   custom-direct:
     type: http
     behavior: domain
-    url: "https://gcore.jsdelivr.net/gh/chrocleo/proxy-config@main/clash/ruleset/custom-direct.yaml"
+    url: "https://gcore.jsdelivr.net/gh/chrocleo/proxy-config@latest/clash/ruleset/custom-direct.yaml"
     path: ./ruleset/custom-direct.yaml
 
   reject:
