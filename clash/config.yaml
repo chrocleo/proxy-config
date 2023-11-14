@@ -22,9 +22,17 @@ proxy-groups:
     filter: "香港|台湾|新加坡|马来西亚"
     url: "http://www.gstatic.com/generate_204"
     interval: 3600
+  - name: "⚠️ 故障转移"
+    type: fallback
+    use:
+      - MMcloud
+    filter: "香港|台湾|新加坡|马来西亚"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 3600
   - name: "🚀 代理连接"
     type: select
     proxies:
+      - ⚠️ 故障转移
       - ♻️ 自动选择
     use:
       - MMcloud
