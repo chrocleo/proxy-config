@@ -181,8 +181,8 @@ rules:
   - RULE-SET,apple,🎯 直接连接
   - RULE-SET,icloud,🎯 直接连接
   - RULE-SET,google,🎯 直接连接
-  - RULE-SET,direct,🎯 直接连接
   - RULE-SET,proxy,🚀 代理连接
+  - RULE-SET,direct,🎯 直接连接
   - RULE-SET,gfw,🚀 代理连接
   - RULE-SET,greatfire,🚀 代理连接
   - RULE-SET,tld-not-cn,🚀 代理连接
