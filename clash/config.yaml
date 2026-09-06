@@ -12,7 +12,7 @@ proxies:
 proxy-providers:
   MMcloud:
     type: http
-    url: "https://api-suc.0z.gs/sub?target=clash&url=https%3A%2F%2F15.biubiusub001.top%2F%2Flink%2F03f92f642a5366b5%3Fsub%3D3"
+    url: "https://api-suc.0z.gs/sub?target=clash&url=https%3A%2F%2F20.biubiusub001.top%2F%2Flink%2F2a454df711cf97fa%3Fsub%3D3"
     path: ./proxies/MMcloud.yaml
 proxy-groups:
   - name: "♻️ 自动选择"
